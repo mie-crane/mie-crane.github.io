@@ -1,0 +1,141 @@
+.informationSection {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+.informationArea {
+    width: 75%;
+    max-width: 800px;
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+}
+.informationText {
+    color: #AEA9A9;
+    padding-right: 2%;
+    padding-left: 2%;
+    font-size: 1.125rem;
+}
+.informationButton {
+    margin-right: 1%;
+    width: 12.5rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    vertical-align: center;
+    align-self: flex-end;
+    border-radius: 10px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    border: #746C99;
+    filter: drop-shadow(5px 5px 2px #AEA9A9);
+    background-color: #746C99;
+    color: #FFFFFF;
+}
+.informationIcon {
+    font-size: 0.625rem;
+}
+
+.craneListSection {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color: #EDECF5;
+    border-radius: 60px 60px 0 0;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.craneListArea {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 700px;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 5%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.craneListImage {
+    max-width: 100%;
+    height: fit-content;
+    padding-bottom: 1rem;
+}
+
+.craneButtonDiv {
+    width: 75%;
+    max-width: 800px;
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+}
+
+.contactAndRecruit {
+    margin-top: 190px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 2%;
+    color: #FFFFFF;
+}
+
+.subTitle {
+    text-align: left;
+    margin-left: 10%;
+    font-size: 1.75rem;
+    text-decoration:underline;
+}
+
+.recruitIcon {
+    max-width: 100%;
+    height: fit-content;
+}
+
+.contactSection {
+    flex: 1;
+    text-align: center;
+    border-radius: 60px 60px 0 0;
+    background-color: #FFCC33;
+    padding-bottom: 90px;
+    margin-bottom: 100px;
+}
+
+
+.recruitSection {
+    flex: 1;
+    text-align: center;
+    border-radius: 60px 60px 0 0;
+    background-color: #84A495;
+}
+
+.contactMainText {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+.contactAndRecruitSubText {
+    font-size: 1.25rem;
+}
+.recruitSubText {
+    font-size: 1.25rem;
+    margin-top: 3rem;
+    margin-bottom: 2.25rem;
+}
+.transparentButton {
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    border: 1px solid #FFFFFF;
+    height: 3.75rem;
+    width: 17.5rem;
+}
+.recruitButton {
+    margin-top: 3.25rem;
+}

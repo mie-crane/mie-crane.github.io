@@ -1,0 +1,41 @@
+.footer {
+    margin-top: 100px;
+    width: 100%;
+    border-radius: 60px 60px 0 0;
+    background-color: #746C99;
+    color: #FFFFFF;
+    min-height: 225px;
+    padding-bottom: 3.5rem;
+}
+
+.footerTitle {
+    font-size: 1.75rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.flexbox {
+    display: flex;
+    align-items: center;
+    padding-top: 58px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+
+}
+
+.navArea {
+    padding: 0;
+    text-align: start;
+}
+
+.nav-link {
+    align-self: flex-end;
+}
+
+.address {
+    font-size: 1.125rem;
+    margin-left: 3.5rem;
+}
