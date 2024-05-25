@@ -4,7 +4,6 @@ import styles from "./AppHeader.module.css";
 export default function AppHeader() {
     return (
         <header className={styles.header}>
-            <script src="http://localhost:8097"></script>
             <h1><Link href='home' className="first-item">有限会社 三重クレーン</Link></h1>
             <nav aria-labelledby="aria-nav">
                 <ul>
