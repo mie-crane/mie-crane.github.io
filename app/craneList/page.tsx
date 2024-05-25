@@ -56,7 +56,7 @@ export default function craneList() {
     )
 }
 
-export function createCraneListView(cranes: Crane[]) {
+function createCraneListView(cranes: Crane[]) {
     return (
         cranes.map((crane, index) => {
                 return (
@@ -73,7 +73,7 @@ export function createCraneListView(cranes: Crane[]) {
     )
 }
 
-export function createCraneTableView(cranes: Crane[]) {
+function createCraneTableView(cranes: Crane[]) {
     return (
         cranes.map((crane, index) => {
             return (
