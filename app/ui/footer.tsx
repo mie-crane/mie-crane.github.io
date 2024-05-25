@@ -18,7 +18,7 @@ export default function Footer() {
                 </nav>
             </section>
             <section className={styles.address}>
-                <p>〒879-7102 　大分県豊後大野市三重町菅生１ー９<br/>TEL・FAX  0974-22-3881　定休日/不定休　営業時間</p>
+                <p>〒879-7102 　大分県豊後大野市三重町菅生１ー９<br/>TEL・FAX  0974-22-3881</p>
             </section>
     </footer>
     )
