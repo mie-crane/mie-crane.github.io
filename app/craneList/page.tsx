@@ -63,7 +63,7 @@ function createCraneListView(cranes: Crane[]) {
                     <div className={styles.craneItem} key={index}>
                         <h3><span className={styles.index}>{index}</span>{crane.displayName}</h3>
                         <div className={styles.childCraneItem}>
-                            <Image className={styles.craneImage} src="/70t.png" alt="70tクレーン" width={400} height={280}></Image>
+                            <Image className={styles.craneImage} src={"/" + crane.liftWeight + ".jpg"} alt={crane.liftWeight+"クレーン"} width={400} height={280}></Image>
                             <div className={styles.craneInfoTableBackground}>
                                 <table className={styles.craneTable}>
                                     <tbody>

@@ -24,11 +24,11 @@ export default function Page() {
             </section>
             <section className={styles.craneListSection}>
                 <div className={styles.craneListArea}>
-                    <Image className={styles.craneListImage} src={"/70t.png"} alt={"70tラフタークレーン"} width={400}
+                    <Image className={styles.craneListImage} src={"/70t.jpg"} alt={"70tラフタークレーン"} width={400}
                            height={300}/>
-                    <Image className={styles.craneListImage} src={"/70t.png"} alt={"70tラフタークレーン"} width={400}
+                    <Image className={styles.craneListImage} src={"/25t.jpg"} alt={"25tラフタークレーン"} width={400}
                            height={300}/>
-                    <Image className={styles.craneListImage} src={"/70t.png"} alt={"70tラフタークレーン"} width={400}
+                    <Image className={styles.craneListImage} src={"/13t.jpg"} alt={"13tラフタークレーン"} width={400}
                            height={300}/>
                 </div>
                 <div className={styles.craneButtonDiv}>
