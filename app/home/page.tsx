@@ -39,7 +39,7 @@ export default function Page() {
                 <section className={styles.contactSection}>
                     <h3 className={styles.subTitle}>お問い合わせ</h3>
                     <Image className={styles.recruitIcon} src={'/mail.png'} alt={'メールアイコン'} width={296} height={190} />
-                    <p className={styles.contactMainText}>0974-xx-xxxx</p>
+                    <p className={styles.contactMainText}>0974-22-3881</p>
                     <p className={styles.contactAndRecruitSubText}>お気軽にお問い合わせください</p>
                     <div className={styles.inlineBlock}>
                     <Link className={styles.transparentButton} href={'/contact'}>お問い合わせはこちら</Link>
