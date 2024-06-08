@@ -2,6 +2,7 @@ import AppHeader from "@/app/ui/appHeader";
 import Image from "next/image";
 import styles from './Page.module.css';
 import Footer from "@/app/ui/footer";
+import Link from "next/link";
 
 export default function Page() {
     return (
@@ -18,7 +19,7 @@ export default function Page() {
                 <div className={styles.informationArea}>
                     <p className={styles.informationText}>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
                     </p>
-                    <button className={styles.informationButton}>会社案内はこちら&nbsp;<span className={styles.informationIcon}>▶</span>︎</button>
+                    <Link href={'/about'} className={styles.informationButton}>会社案内はこちら&nbsp;<span className={styles.informationIcon}>▶</span>︎</Link>
                 </div>
             </section>
             <section className={styles.craneListSection}>
@@ -31,7 +32,7 @@ export default function Page() {
                            height={300}/>
                 </div>
                 <div className={styles.craneButtonDiv}>
-                    <button className={styles.informationButton}>保有車両はこちら&nbsp;<span className={styles.informationIcon}>▶</span>︎</button>
+                    <Link href={'/craneList'} className={styles.informationButton}>保有車両はこちら&nbsp;<span className={styles.informationIcon}>▶</span>︎</Link>
                 </div>
             </section>
             <div className={styles.contactAndRecruit}>
@@ -40,7 +41,9 @@ export default function Page() {
                     <Image className={styles.recruitIcon} src={'/mail.png'} alt={'メールアイコン'} width={296} height={190} />
                     <p className={styles.contactMainText}>0974-xx-xxxx</p>
                     <p className={styles.contactAndRecruitSubText}>お気軽にお問い合わせください</p>
-                    <button className={styles.transparentButton}>お問い合わせはこちら</button>
+                    <div className={styles.inlineBlock}>
+                    <Link className={styles.transparentButton} href={'/contact'}>お問い合わせはこちら</Link>
+                    </div>
                 </section>
                 {/*<section className={styles.recruitSection}>*/}
                 {/*    <h3 className={styles.subTitle}>採用情報</h3>*/}

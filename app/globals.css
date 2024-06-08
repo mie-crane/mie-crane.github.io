@@ -42,3 +42,19 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.TabIcon {
+  color: #FFCC33;
+  font-size: 20px;
+  display: inline-flex;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.TabHeader {
+  color: #746C99;
+  text-align: left;
+  align-content: center;
+  font-size: 2rem;
+  border-bottom: 1px dashed #AEA9A9;
+}
