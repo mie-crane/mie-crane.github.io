@@ -6,7 +6,7 @@ export class Crane {
                 readonly jib: String,
                 readonly liftingHeight: String,
                 readonly workRadius: String,
-                readonly units: Number
+                readonly units: String
     ) {
         this.displayName = displayName
         this.model = model
@@ -16,5 +16,18 @@ export class Crane {
         this.liftingHeight = liftingHeight
         this.workRadius = workRadius
         this.units = units
+    }
+
+    values(): String[] {
+        return [
+        this.displayName,
+        this.model,
+        this.liftWeight,
+        this.boomLength,
+        this.jib,
+        this.liftingHeight,
+        this.workRadius,
+        this.units
+        ]
     }
 }
