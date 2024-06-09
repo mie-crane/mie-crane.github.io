@@ -6,3 +6,41 @@
     flex-direction: column;
     flex-wrap: nowrap;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    text-align: center;
+    align-items:center;
+    grid-auto-rows: 50px;
+}
+
+.gridKey {
+}
+
+.circle {
+    background-color: #EDECF5;
+    padding:8px 14px;
+    border-radius: 15px;
+}
+
+.gridValue {
+    text-align: left;
+}
+
+.map {
+    align-self: center;
+}
+
+.historyKey {
+}
+
+.historyCircle {
+    background-color: #EDECF5;
+    padding:8px 14px;
+    border-radius: 10px;
+}
+
+.historyValue {
+    text-align: left;
+}
