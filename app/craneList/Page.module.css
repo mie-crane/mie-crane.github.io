@@ -48,21 +48,46 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    column-gap: 50px;
-    row-gap: 20px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .craneImage {
-    border-radius: 20px;
+    container-name: crane;
+    border-radius: 20px 0px 0px 20px;
 }
 
 .craneInfoTableBackground {
-    border-radius: 20px;
+    border-radius: 0px 20px 20px 0px;
     width: 400px;
-    height: 280px;
+    height: auto;
     background: #FFFFFF;
+    container-name: table;
+}
+
+@media (width > 655px) and (width <= 854px) {
+    .craneImage {
+        width: 300px;
+        height: auto;
+    }
+    .craneInfoTableBackground {
+        width: 300px;
+    }
+}
+
+@media (width <= 655px) {
+    .craneImage {
+        container-name: crane;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .craneInfoTableBackground {
+        border-radius: 0 0 20px 20px;
+        width: 400px;
+        height: 280px;
+        background: #FFFFFF;
+        container-name: table;
+    }
 }
 
 .craneTable {
