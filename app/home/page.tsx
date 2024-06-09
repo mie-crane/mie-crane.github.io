@@ -42,7 +42,7 @@ export default function Page() {
                     <p className={styles.contactMainText}>0974-22-3881</p>
                     <p className={styles.contactAndRecruitSubText}>お気軽にお問い合わせください</p>
                     <div className={styles.inlineBlock}>
-                    <Link className={styles.transparentButton} href='tel:0974-22-1632'>電話をかける</Link>
+                        <Link className={styles.transparentButton} href='tel:0974-22-1632'>電話をかける（スマホのみ）</Link>
                     </div>
                 </section>
                 {/*<section className={styles.recruitSection}>*/}
