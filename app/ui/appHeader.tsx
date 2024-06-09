@@ -12,7 +12,7 @@ export default function AppHeader() {
                     <Link href='/about' className="nav-link">会社案内</Link>
                     {/*<Link href='/performance' className="nav-link">会社実績</Link>*/}
                     {/*<Link href='/recruit' className="nav-link">採用情報</Link>*/}
-                    <Link href='/contact' className={`${"nav-link"} ${styles.contact}`}>お問い合わせ</Link>
+                    <Link href='tel:0974-22-3881' className={`${"nav-link"} ${styles.contact}`}>お問い合わせ</Link>
                     </ul>
             </nav>
         </header>
