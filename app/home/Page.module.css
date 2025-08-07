@@ -1,145 +1,382 @@
-.informationSection {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
-}
-.informationArea {
-    width: 75%;
-    max-width: 800px;
-    display: flex;
-    flex-flow: column;
-    margin: 0 auto;
-}
-.informationText {
-    color: #AEA9A9;
-    padding-right: 2%;
-    padding-left: 2%;
-    font-size: 1.125rem;
-}
-.informationButton {
-    margin-right: 1%;
-    width: 12.5rem;
-    height: 3rem;
+/* ヒーローセクション */
+.heroSection {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    flex-direction: row;
     justify-content: center;
-    vertical-align: center;
-    align-self: flex-end;
-    border-radius: 10px;
-    font-size: 1.125rem;
-    font-weight: bold;
-    border: #746C99;
-    filter: drop-shadow(5px 5px 2px #AEA9A9);
-    background-color: #746C99;
-    color: #FFFFFF;
-}
-.informationIcon {
-    font-size: 0.625rem;
 }
 
-.craneListSection {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    background-color: #EDECF5;
+.heroImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+    transform: scale(1.1);
+    transition: transform var(--transition);
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(91, 79, 139, 0.7) 0%, rgba(72, 61, 110, 0.5) 100%);
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: var(--space-8);
+    animation: fadeIn 1s ease-out;
+}
+
+.heroTitle {
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heroSubtitle {
+    font-size: var(--text-xl);
+    font-weight: 400;
+    margin-bottom: var(--space-8);
+    opacity: 0.9;
+}
+
+.heroButton {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    align-content: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    gap: var(--space-2);
+    background: var(--accent);
+    color: white;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-full);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.heroButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background: var(--accent-hover);
+}
+
+/* 情報セクション */
+.informationSection {
+    padding: var(--space-20) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.informationSection::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+    opacity: 0.05;
+    border-radius: 50%;
+}
+
+.informationArea {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.informationText {
+    color: var(--text-secondary);
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    margin-bottom: var(--space-8);
+    text-align: center;
+}
+
+.informationButton {
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-base);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+    display: flex;
+}
+
+.informationButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.informationIcon {
+    font-size: var(--text-sm);
+    transition: transform var(--transition-fast);
+}
+
+.informationButton:hover .informationIcon {
+    transform: translateX(4px);
+}
+
+/* クレーンリストセクション */
+.craneListSection {
+    background: linear-gradient(180deg, var(--background) 0%, #F8F9FA 100%);
+    padding: var(--space-20) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.craneListSection::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -200px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    opacity: 0.03;
+    transform: translateY(-50%);
+}
+
+.craneListTitle {
+    text-align: center;
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-12);
+    animation: fadeIn 0.8s ease-out;
 }
 
 .craneListArea {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 700px;
-    flex-direction: row;
-    justify-content: center;
-    column-gap: 5%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-8);
+    max-width: 1200px;
+    margin: 0 auto var(--space-12);
+    padding: 0 var(--space-6);
+}
+
+.craneCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    background: white;
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+    animation: slideInUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.craneCard:nth-child(1) { animation-delay: 0.1s; }
+.craneCard:nth-child(2) { animation-delay: 0.2s; }
+.craneCard:nth-child(3) { animation-delay: 0.3s; }
+
+.craneCard:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
 }
 
 .craneListImage {
-    max-width: 100%;
-    height: fit-content;
-    border-radius: 20px;
-    margin-bottom: 1rem;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform var(--transition);
+}
+
+.craneCard:hover .craneListImage {
+    transform: scale(1.05);
+}
+
+.craneInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-4);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    transform: translateY(100%);
+    transition: transform var(--transition);
+}
+
+.craneCard:hover .craneInfo {
+    transform: translateY(0);
+}
+
+.craneName {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin: 0;
 }
 
 .craneButtonDiv {
-    width: 75%;
-    max-width: 800px;
-    display: flex;
-    flex-flow: column;
-    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out 0.4s;
+    animation-fill-mode: both;
 }
 
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* お問い合わせセクション */
 .contactAndRecruit {
-    margin-top: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    column-gap: 2%;
-    color: #FFFFFF;
-}
-
-.subTitle {
-    text-align: left;
-    margin-left: 10%;
-    font-size: 1.75rem;
-    text-decoration:underline;
-}
-
-.recruitIcon {
-    max-width: 100%;
-    height: fit-content;
+    margin-top: var(--space-20);
+    position: relative;
 }
 
 .contactSection {
-    flex: 1;
+    background: linear-gradient(135deg, var(--accent) 0%, #FFC433 100%);
+    color: white;
+    padding: var(--space-16) 0;
     text-align: center;
-    background-color: #FFCC33;
-    padding-bottom: 90px;
+    position: relative;
+    overflow: hidden;
 }
 
+.contactSection::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -25%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
+}
 
-.recruitSection {
-    flex: 1;
+.contactContent {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+.subTitle {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-8);
     text-align: center;
-    border-radius: 60px 60px 0 0;
-    background-color: #84A495;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.subTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: white;
+    border-radius: var(--radius-full);
+}
+
+.contactIcon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--space-8);
+    display: block;
+    opacity: 0.9;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .contactMainText {
-    font-size: 2.25rem;
-    margin-bottom: 2rem;
-    font-weight: bold;
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    letter-spacing: 0.05em;
 }
+
 .contactAndRecruitSubText {
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-8);
+    opacity: 0.95;
 }
-.recruitSubText {
-    font-size: 1.25rem;
-    margin-top: 3rem;
-    margin-bottom: 2.25rem;
+
+.transparentButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: var(--accent);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-full);
+    border: none;
+    min-width: 280px;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.transparentButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: var(--text-3xl);
+    }
+    
+    .heroSubtitle {
+        font-size: var(--text-lg);
+    }
+    
+    .craneListArea {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .contactMainText {
+        font-size: var(--text-3xl);
+    }
+    
+    .transparentButton {
+        min-width: 240px;
+        font-size: var(--text-base);
+    }
+}
+
+
 .inlineBlock {
     display: inline-block;
-}
-.transparentButton {
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    vertical-align: middle;
-    color: #FFFFFF;
-    font-size: 1.25rem;
-    border: 1px solid #FFFFFF;
-    height: 3.75rem;
-    width: 17.5rem;
-}
-.recruitButton {
-    margin-top: 3.25rem;
 }

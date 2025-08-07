@@ -1,21 +1,269 @@
-.contact {
-    border-radius: 40px;
-    background-color: #FFCC33;
-    width: 200px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
 .header {
-    z-index: 1;
+    z-index: 10;
     display: flex;
-    color: #FFFFFF;
     align-items: center;
     justify-content: space-between;
-    background-color: #746C99;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
     height: 5rem;
     width: 100%;
     position: sticky;
-    top:0;
+    top: 0;
+    transition: all var(--transition);
+    padding: 0 var(--space-6);
 }
+
+.header:hover {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.logo {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--primary);
+    transition: all var(--transition-fast);
+    animation: slideInLeft var(--transition-slow) ease-out;
+}
+
+.logo:hover {
+    color: var(--primary-light);
+    transform: translateX(4px);
+}
+
+.wideNav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.ul {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navLink {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--text-primary);
+    position: relative;
+    transition: color var(--transition-fast);
+    padding: var(--space-2) 0;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width var(--transition-fast);
+    border-radius: var(--radius-full);
+}
+
+.navLink:hover {
+    color: var(--primary);
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+.contact {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: white;
+    font-weight: 600;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 6px -1px rgb(255 184 0 / 0.2);
+    position: relative;
+    overflow: hidden;
+    margin-left: var(--space-4);
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width var(--transition), height var(--transition);
+}
+
+.contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px -1px rgb(255 184 0 / 0.3);
+    color: white;
+}
+
+/* モバイルメニュー */
+.mobileMenuButton {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 9;
+}
+
+.hamburger {
+    width: 24px;
+    height: 2px;
+    background: var(--primary);
+    position: relative;
+    transition: all var(--transition-fast);
+    border-radius: var(--radius-full);
+    display: block;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: var(--primary);
+    transition: all var(--transition-fast);
+    border-radius: var(--radius-full);
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+.mobileMenuButton.active .hamburger {
+    background: transparent;
+    transform: rotate(0deg);
+}
+
+.mobileMenuButton.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+    width: 24px;
+}
+
+.mobileMenuButton.active .hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+    width: 24px;
+}
+
+.mobileMenu {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    background: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: var(--space-6);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+    box-shadow: 0 8px 16px -4px rgb(0 0 0 / 0.2);
+    z-index: 9;
+}
+
+.mobileMenu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobileNavList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.mobileNavLink {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--text-primary);
+    padding: var(--space-3) var(--space-2);
+    transition: all var(--transition-fast);
+    display: block;
+    border-radius: var(--radius);
+    width: 100%;
+}
+
+.mobileNavLink:hover {
+    color: var(--primary);
+    background: var(--surface-hover);
+    transform: translateX(8px);
+}
+
+.mobileContact {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: white;
+    font-weight: 600;
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-top: var(--space-4);
+    transition: all var(--transition-fast);
+    display: block;
+}
+
+.mobileContact:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 12px -1px rgb(255 184 0 / 0.3);
+}
+
+/* レガシーコード用スタイル */
+.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+@media (max-width: 909px) {
+    .ul {
+        display: none;
+    }
+    
+    .mobileMenuButton {
+        display: flex;
+    }
+    
+    .header {
+        padding: 0 var(--space-4);
+    }
+    
+    .logo {
+        font-size: var(--text-lg);
+    }
+}
+
+@media (min-width: 910px) {
+    .mobileMenuButton,
+    .mobileMenu {
+        display: none !important;
+    }
+}
+

@@ -1,12 +1,12 @@
 export class Crane {
-    constructor(readonly displayName: String,
-                readonly model: String,
-                readonly liftWeight: String,
-                readonly boomLength: String,
-                readonly jib: String,
-                readonly liftingHeight: String,
-                readonly workRadius: String,
-                readonly units: String
+    constructor(readonly displayName: string,
+                readonly model: string,
+                readonly liftWeight: string,
+                readonly boomLength: string,
+                readonly jib: string,
+                readonly liftingHeight: string,
+                readonly workRadius: string,
+                readonly units: string
     ) {
         this.displayName = displayName
         this.model = model
@@ -18,7 +18,7 @@ export class Crane {
         this.units = units
     }
 
-    values(): String[] {
+    values(): string[] {
         return [
         this.displayName,
         this.model,

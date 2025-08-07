@@ -1,0 +1,274 @@
+.contactPage {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--background) 0%, #F8F9FA 100%);
+    padding: var(--space-20) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.contactPage::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -25%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(91, 79, 139, 0.05) 0%, transparent 70%);
+    transform: rotate(45deg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    position: relative;
+    z-index: 1;
+}
+
+.pageTitle {
+    text-align: center;
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-16);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    max-width: 600px;
+    margin: 0 auto var(--space-16);
+}
+
+.contactCard {
+    background: white;
+    border-radius: var(--radius-2xl);
+    padding: var(--space-12);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition);
+    animation: slideInUp 0.8s ease-out;
+    animation-fill-mode: both;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contactCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left var(--transition-slow);
+}
+
+.contactCard:hover::before {
+    left: 100%;
+}
+
+.contactCard:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.contactCard:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.contactIcon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-6);
+    padding: var(--space-4);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: var(--text-2xl);
+    box-shadow: 0 8px 16px rgba(91, 79, 139, 0.3);
+}
+
+.contactTitle {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+.contactInfo {
+    font-size: var(--text-xl);
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: var(--space-6);
+}
+
+.contactDescription {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    margin-bottom: var(--space-8);
+}
+
+.contactButton {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: white;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 6px rgba(255, 184, 0, 0.2);
+    min-width: 200px;
+    justify-content: center;
+}
+
+.contactButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(255, 184, 0, 0.3);
+    color: white;
+}
+
+.mapSection {
+    background: white;
+    border-radius: var(--radius-2xl);
+    padding: var(--space-12);
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.8s ease-out 0.4s;
+    animation-fill-mode: both;
+}
+
+.mapTitle {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.addressInfo {
+    background: linear-gradient(135deg, #F8F9FA 0%, #EDECF5 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    margin-bottom: var(--space-8);
+}
+
+.addressTitle {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: var(--space-2);
+}
+
+.addressText {
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    line-height: 1.6;
+}
+
+.businessHours {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+}
+
+.hoursCard {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: transform var(--transition-fast);
+}
+
+.hoursCard:hover {
+    transform: scale(1.02);
+}
+
+.hoursTitle {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+.hoursText {
+    font-size: var(--text-base);
+    opacity: 0.9;
+}
+
+
+.companyLink {
+    margin-top: var(--space-4);
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.aboutLink {
+    color: var(--primary);
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.aboutLink:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contactGrid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .contactCard {
+        padding: var(--space-8);
+    }
+    
+    .pageTitle {
+        font-size: var(--text-3xl);
+        margin-bottom: var(--space-12);
+    }
+    
+    .contactIcon {
+        width: 64px;
+        height: 64px;
+        font-size: var(--text-xl);
+    }
+    
+    .contactTitle {
+        font-size: var(--text-xl);
+    }
+    
+    .contactInfo {
+        font-size: var(--text-lg);
+    }
+    
+    .mapSection {
+        padding: var(--space-8);
+    }
+    
+    .businessHours {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

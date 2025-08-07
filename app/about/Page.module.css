@@ -1,46 +1,214 @@
+.aboutContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-6);
+}
+
 .aboutSection {
-    margin-top: 50px;
-    margin-left: 2%;
-    margin-right: 2%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    margin-bottom: var(--space-20);
+}
+
+.sectionTitle {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--space-12);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    border-radius: var(--radius-full);
+}
+
+/* 会社概要セクション */
+.companyInfo {
+    background: white;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 2fr 5fr;
-    text-align: center;
-    align-items:center;
-    grid-auto-rows: 50px;
+    grid-template-columns: 200px 1fr;
+    border-bottom: 1px solid var(--border);
+    transition: background-color var(--transition-fast);
+}
+
+.grid:hover {
+    background-color: var(--surface-hover);
+}
+
+.grid:last-child {
+    border-bottom: none;
 }
 
 .gridKey {
+    padding: var(--space-6) var(--space-8);
+    background: linear-gradient(135deg, #F8F9FA 0%, #EDECF5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: var(--text-sm);
 }
 
-.circle {
-    background-color: #EDECF5;
-    padding:8px 14px;
-    border-radius: 15px;
-}
 
 .gridValue {
-    text-align: left;
+    padding: var(--space-6) var(--space-8);
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    line-height: 1.6;
 }
 
-.map {
-    align-self: center;
+/* 沿革セクション */
+.historyInfo {
+    background: white;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
 }
 
 .historyKey {
+    padding: var(--space-6) var(--space-8);
+    background: linear-gradient(135deg, #F0F7FF 0%, #E6F0FF 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+    font-weight: 600;
+    color: #4A90E2;
+    font-size: var(--text-sm);
 }
 
-.historyCircle {
-    background-color: #EDECF5;
-    padding:8px 14px;
-    border-radius: 10px;
-}
 
 .historyValue {
-    text-align: left;
+    padding: var(--space-6) var(--space-8);
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    line-height: 1.6;
+}
+
+/* アクセスマップ */
+.mapContainer {
+    background: white;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
+}
+
+.map {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: var(--radius-2xl);
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .aboutContainer {
+        padding: var(--space-12) var(--space-4);
+    }
+    
+    .aboutSection {
+        margin-bottom: var(--space-16);
+    }
+    
+    .sectionTitle {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--space-8);
+    }
+    
+    .grid {
+        grid-template-columns: 120px 1fr;
+    }
+    
+    .gridKey,
+    .historyKey {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        justify-content: flex-start;
+    }
+    
+    
+    .gridValue,
+    .historyValue {
+        padding: var(--space-4) var(--space-6);
+        font-size: var(--text-sm);
+    }
+    
+    .map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutContainer {
+        padding: var(--space-8) var(--space-3);
+    }
+    
+    .sectionTitle {
+        font-size: var(--text-xl);
+    }
+    
+    .gridKey,
+    .historyKey {
+        padding: var(--space-4) var(--space-6);
+    }
+    
+    .gridValue,
+    .historyValue {
+        padding: var(--space-4) var(--space-6);
+        font-size: var(--text-sm);
+        line-height: 1.5;
+    }
 }
