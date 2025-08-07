@@ -2,7 +2,6 @@ import AppHeader from "@/app/ui/appHeader";
 import Footer from "@/app/ui/footer";
 import styles from "./Page.module.css"
 import {Crane} from "@/app/data/Crane";
-import React from "react";
 import Image from "next/image";
 
 export default function craneList() {
@@ -32,8 +31,8 @@ export default function craneList() {
                 "13tラフタークレーン",
                 "KRMｰ13HｰF 等",
                 "13t",
-                "24,0m",
-                "5,5m",
+                "24.0m",
+                "5.5m",
                 "",
                 "",
                 "4台"
@@ -44,11 +43,31 @@ export default function craneList() {
         <main>
             <AppHeader></AppHeader>
             <section className={styles.craneListSection}>
-                <h2 className={'TabHeader'}><span className={'TabIcon'}>⚫︎</span>保有車両</h2>
-                { createCraneListView(cranes) }
-            </section>
-            <section className={styles.craneListSection}>
-                <h2 className={'TabHeader'}><span className={'TabIcon'}>⚫︎</span>車両詳細表</h2>
+                <h2 className={styles.sectionTitle}>保有車両</h2>
+                <div className={styles.craneImagesSection}>
+                    <div className={styles.craneImageWrapper}>
+                        <Image 
+                            className={styles.craneImage} 
+                            src="/70t.jpg" 
+                            alt="70tクレーン"
+                            width={600} 
+                            height={400}
+                            sizes="(max-width: 768px) 100vw, 45vw"
+                        />
+                        <div className={styles.imageCaption}>70tラフタークレーン</div>
+                    </div>
+                    <div className={styles.craneImageWrapper}>
+                        <Image 
+                            className={styles.craneImage} 
+                            src="/25t.jpg" 
+                            alt="25tクレーン"
+                            width={600} 
+                            height={400}
+                            sizes="(max-width: 768px) 100vw, 45vw"
+                        />
+                        <div className={styles.imageCaption}>25tラフタークレーン</div>
+                    </div>
+                </div>
                 { createCraneTableView(cranes) }
             </section>
             <Footer></Footer>
@@ -56,57 +75,20 @@ export default function craneList() {
     )
 }
 
-function createCraneListView(cranes: Crane[]) {
-    return (
-        cranes.map((crane, index) => {
-                return (
-                    <div className={styles.craneItem} key={index}>
-                        <h3 className={styles.craneName}><span className={styles.index}>{index}</span>{crane.displayName}</h3>
-                        <div className={styles.childCraneItem}>
-                            <Image className={styles.craneImage} src={"/" + crane.liftWeight + ".jpg"} alt={crane.liftWeight+"クレーン"} width={400} height={280}></Image>
-                            <div className={styles.craneInfoTableBackground}>
-                                <table className={styles.craneTable}>
-                                    <tbody>
-                                    <tr>
-                                        <th className={styles.tableHeader}>型式</th>
-                                        <td className={styles.tableData}>{crane.displayName}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className={styles.tableHeader}>吊上荷重</th>
-                                        <td className={styles.tableData}>{crane.liftWeight}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className={styles.tableHeader}>ブーム長</th>
-                                        <td className={styles.tableData}>{crane.boomLength}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className={styles.tableHeader}>台数</th>
-                                        <td className={styles.tableData}>{crane.units}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                )
-            }
-        )
-    )
-}
 
 function createCraneTableView(cranes: Crane[]) {
     let headerNames = ["No", "型式", "吊上荷重", "ブーム", "ジブ", "最大地上揚程", "最大作業半径", "台数"]
-    let header = headerNames.map((item, index) => <th key={index} className={styles.tableHeader}>{item}</th>)
+    let header = headerNames.map((item, index) => <th key={index}>{item}</th>)
     let data = cranes.map((crane, index) =>
         <tr key={index}>
-             <td className={styles.tableDetailData}>0{index+1}</td>
+             <td className={styles.tableDetailData}>{String(index + 1).padStart(2, '0')}</td>
             {crane.values().slice(1, 8).map((value, index) =>
-                <td className={styles.tableDetailData} key={index}>{value}</td>
+                <td className={styles.tableDetailData} key={index}>{value || '-'}</td>
             )}
         </tr>
     )
     return (
-        <table>
+        <table className={styles.detailTable}>
             <thead>
                 <tr>{header}</tr>
             </thead>
